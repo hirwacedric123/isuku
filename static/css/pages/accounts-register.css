@@ -1,0 +1,19 @@
+.auth-card {
+  border-top: 4px solid var(--color-forest);
+}
+
+.auth-form p label {
+  font-weight: 600;
+}
+
+.auth-form input,
+.auth-form select {
+  border-radius: 10px;
+  border: 1px solid rgba(42, 36, 32, 0.2);
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  border-color: var(--color-clay);
+  box-shadow: 0 0 0 0.2rem rgba(137, 106, 88, 0.2);
+}

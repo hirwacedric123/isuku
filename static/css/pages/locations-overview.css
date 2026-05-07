@@ -1,0 +1,8 @@
+.overview-card {
+  border-left: 5px solid var(--color-forest);
+}
+
+.overview-card p {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}

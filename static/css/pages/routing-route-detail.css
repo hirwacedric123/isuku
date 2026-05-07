@@ -1,7 +1,7 @@
 .route-table thead th {
-  background-color: rgba(86, 114, 87, 0.12);
+  background-color: rgba(76, 118, 59, 0.2);
 }
 
 .route-table tbody tr:hover {
-  background-color: rgba(217, 216, 213, 0.55);
+  background-color: rgba(176, 206, 136, 0.2);
 }

@@ -1,12 +1,11 @@
 .report-search {
   max-width: 320px;
-  border-radius: 10px;
 }
 
 .report-table thead th {
-  background-color: rgba(137, 106, 88, 0.16);
+  background-color: rgba(76, 118, 59, 0.2);
 }
 
 .list-group-item {
-  border-color: rgba(42, 36, 32, 0.1);
+  border-color: var(--color-border);
 }

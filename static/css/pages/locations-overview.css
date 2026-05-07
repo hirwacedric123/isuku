@@ -1,8 +1,10 @@
 .overview-card {
-  border-left: 5px solid var(--color-forest);
+  border-left: 5px solid var(--color-primary);
+  background: linear-gradient(145deg, rgba(176, 206, 136, 0.15), #fff 42%);
 }
 
 .overview-card p {
   font-size: 1.05rem;
   margin-bottom: 0.4rem;
+  color: var(--color-text);
 }

@@ -10,7 +10,7 @@
   {% block extra_css %}{% endblock %}
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg app-navbar">
+  <nav class="navbar navbar-expand-lg app-navbar py-3">
     <div class="container">
       <a class="navbar-brand fw-semibold" href="/">ISUKU SWM</a>
       <div class="ms-auto d-flex gap-2">
@@ -24,7 +24,10 @@
           {% if user.role == "ADMIN" %}
             <a class="btn btn-outline-light btn-sm" href="{% url 'analytics:admin_dashboard' %}">Admin</a>
           {% endif %}
-          <a class="btn btn-light btn-sm" href="{% url 'accounts:logout' %}">Logout</a>
+          <form method="post" action="{% url 'accounts:logout' %}" class="d-inline">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-light btn-sm">Logout</button>
+          </form>
         {% else %}
           <a class="btn btn-light btn-sm" href="{% url 'accounts:login' %}">Login</a>
           <a class="btn btn-outline-light btn-sm" href="{% url 'accounts:register' %}">Register</a>
@@ -33,7 +36,7 @@
     </div>
   </nav>
 
-  <main class="container py-4 page-enter">
+  <main class="container py-4 py-lg-5 page-enter">
     {% for message in messages %}
       <div class="alert alert-info">{{ message }}</div>
     {% endfor %}

@@ -1,11 +1,15 @@
 .metric-card {
-  border-top: 4px solid var(--color-forest);
+  border-top: 4px solid var(--color-primary);
 }
 
 .metric-number {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--color-charcoal);
+  color: var(--color-primary);
+}
+
+.chart-wrap {
+  height: 320px;
 }
 
 table tbody tr {
@@ -13,6 +17,6 @@ table tbody tr {
 }
 
 table tbody tr:hover {
-  transform: translateX(4px);
-  background-color: rgba(172, 171, 158, 0.15);
+  transform: translateX(2px);
+  background-color: rgba(176, 206, 136, 0.2);
 }

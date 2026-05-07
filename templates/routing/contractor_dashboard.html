@@ -3,18 +3,21 @@
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/routing-contractor-dashboard.css' %}">{% endblock %}
 {% block extra_js %}<script src="{% static 'js/pages/routing-contractor-dashboard.js' %}"></script>{% endblock %}
 {% block content %}
-<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-  <h3 class="section-title">Contractor Dashboard</h3>
+<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2 panel-header">
+  <div>
+    <span class="pill-tag mb-2">Fleet</span>
+    <h3 class="section-title mb-0">Contractor Dashboard</h3>
+  </div>
   <input id="open-reports-search" class="form-control report-search" type="text" placeholder="Filter open reports">
   <a class="btn btn-success" href="{% url 'routing:generate_route' %}">Generate Route</a>
 </div>
 <div class="row g-3">
   <div class="col-md-8">
     <div class="card">
-      <div class="card-body">
-        <h5>Open Reports</h5>
+      <div class="card-body p-4">
+        <h5 class="section-title fs-6">Open Reports</h5>
         <div class="table-responsive">
-        <table class="table table-sm report-table">
+        <table class="table table-sm report-table align-middle">
           <thead><tr><th>ID</th><th>Title</th><th>Coordinates</th><th>Status</th></tr></thead>
           <tbody>
           {% for report in open_reports %}
@@ -35,8 +38,8 @@
   </div>
   <div class="col-md-4">
     <div class="card">
-      <div class="card-body">
-        <h5>Active Vehicles</h5>
+      <div class="card-body p-4">
+        <h5 class="section-title fs-6">Active Vehicles</h5>
         <ul class="list-group">
           {% for vehicle in vehicles %}
             <li class="list-group-item">{{ vehicle.plate_number }} ({{ vehicle.capacity }})</li>

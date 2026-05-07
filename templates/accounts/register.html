@@ -5,13 +5,16 @@
 <div class="row justify-content-center">
   <div class="col-md-7">
     <div class="card shadow-sm auth-card">
-      <div class="card-body">
+      <div class="card-body p-4 p-lg-5">
+        <div class="panel-header">
+          <span class="pill-tag mb-3">New Workspace</span>
+        </div>
         <h4 class="mb-3 section-title">Create Account</h4>
         <p class="subtitle-muted">Register to report issues and track collection services.</p>
         <form method="post" class="auth-form">
           {% csrf_token %}
           {{ form.as_p }}
-          <button class="btn btn-success">Register</button>
+          <button class="btn btn-success w-100">Register</button>
         </form>
       </div>
     </div>

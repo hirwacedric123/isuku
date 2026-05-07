@@ -1,25 +1,35 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/analytics-admin-dashboard.css' %}">{% endblock %}
-{% block extra_js %}<script src="{% static 'js/pages/analytics-admin-dashboard.js' %}"></script>{% endblock %}
+{% block extra_js %}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="{% static 'js/charts-config.js' %}"></script>
+  <script src="{% static 'js/pages/analytics-admin-dashboard.js' %}"></script>
+{% endblock %}
 {% block content %}
-<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-  <h3 class="section-title">Admin Dashboard</h3>
+<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2 panel-header">
+  <div>
+    <span class="pill-tag mb-2">Executive View</span>
+    <h3 class="section-title mb-0">Admin Dashboard</h3>
+  </div>
   <a class="btn btn-outline-success" href="{% url 'analytics:export_reports_csv' %}">Export CSV</a>
 </div>
 <div class="row g-3">
-  <div class="col-md-4"><div class="card metric-card"><div class="card-body"><strong>Total Reports</strong><div class="metric-number" data-count="{{ total_reports }}">0</div></div></div></div>
-  <div class="col-md-4"><div class="card metric-card"><div class="card-body"><strong>Resolved Reports</strong><div class="metric-number" data-count="{{ resolved_reports }}">0</div></div></div></div>
-  <div class="col-md-4"><div class="card metric-card"><div class="card-body"><strong>Resolution Rate</strong><div class="metric-number" data-count="{{ resolution_rate }}">0</div>%</div></div></div>
+  <div class="col-md-4"><div class="card metric-card metric-tile"><div class="card-body"><strong>Total Reports</strong><div class="metric-number" data-count="{{ total_reports }}">0</div></div></div></div>
+  <div class="col-md-4"><div class="card metric-card metric-tile"><div class="card-body"><strong>Resolved Reports</strong><div class="metric-number" data-count="{{ resolved_reports }}">0</div></div></div></div>
+  <div class="col-md-4"><div class="card metric-card metric-tile"><div class="card-body"><strong>Resolution Rate</strong><div class="metric-number" data-count="{{ resolution_rate }}">0</div>%</div></div></div>
 </div>
 <div class="card mt-3">
-  <div class="card-body">
-    <h5>Reports by Sector</h5>
-    <table class="table table-sm">
+  <div class="card-body p-4">
+    <h5 class="section-title fs-6">Reports by Sector</h5>
+    <div class="chart-wrap mb-4">
+      <canvas id="sector-chart" aria-label="Reports by sector chart"></canvas>
+    </div>
+    <table class="table table-sm align-middle" id="sector-data-table">
       <thead><tr><th>Sector</th><th>Total</th></tr></thead>
       <tbody>
       {% for row in reports_by_sector %}
-        <tr><td>{{ row.sector__name }}</td><td>{{ row.total }}</td></tr>
+        <tr data-sector="{{ row.sector__name }}" data-total="{{ row.total }}"><td>{{ row.sector__name }}</td><td>{{ row.total }}</td></tr>
       {% empty %}
         <tr><td colspan="2">No data yet.</td></tr>
       {% endfor %}

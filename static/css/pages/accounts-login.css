@@ -1,14 +1,14 @@
 .auth-card {
-  border-top: 4px solid var(--color-clay);
+  border-top: 4px solid var(--color-primary);
+  background: linear-gradient(180deg, rgba(176, 206, 136, 0.12), #fff 35%);
 }
 
 .auth-form p label {
   font-weight: 600;
-  color: var(--color-charcoal);
+  color: var(--color-primary);
 }
 
 .auth-form input,
 .auth-form select {
-  border-radius: 10px;
-  border: 1px solid rgba(42, 36, 32, 0.2);
+  min-height: 44px;
 }

@@ -3,7 +3,8 @@
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/analytics-contractor-redirect.css' %}">{% endblock %}
 {% block content %}
 <div class="card dashboard-card">
-  <div class="card-body">
+  <div class="card-body p-4 p-lg-5">
+    <span class="pill-tag mb-3">Operations</span>
     <h3 class="section-title">Contractor Workspace</h3>
     <p class="subtitle-muted">Use the contractor operations dashboard for route actions.</p>
     <a class="btn btn-success" href="{% url 'routing:dashboard' %}">Open Contractor Dashboard</a>

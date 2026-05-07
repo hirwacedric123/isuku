@@ -1,8 +1,8 @@
 .schedule-table thead th {
-  background-color: rgba(86, 114, 87, 0.12);
-  color: var(--color-charcoal);
+  background-color: rgba(76, 118, 59, 0.2);
+  color: var(--color-primary);
 }
 
 .schedule-table tbody tr:hover {
-  background-color: rgba(137, 106, 88, 0.08);
+  background-color: rgba(176, 206, 136, 0.2);
 }

@@ -3,7 +3,8 @@
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/locations-overview.css' %}">{% endblock %}
 {% block content %}
 <div class="card overview-card">
-  <div class="card-body">
+  <div class="card-body p-4">
+    <span class="pill-tag mb-3">Geography</span>
     <h3 class="section-title">Location Overview</h3>
     <p>Districts: {{ district_count }}</p>
     <p>Sectors: {{ sector_count }}</p>

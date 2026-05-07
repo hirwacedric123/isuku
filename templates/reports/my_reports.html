@@ -3,17 +3,20 @@
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/reports-my-reports.css' %}">{% endblock %}
 {% block extra_js %}<script src="{% static 'js/pages/reports-my-reports.js' %}"></script>{% endblock %}
 {% block content %}
-<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-  <h3 class="section-title">Waste Reports</h3>
+<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2 panel-header">
+  <div>
+    <span class="pill-tag mb-2">Operations</span>
+    <h3 class="section-title mb-0">Waste Reports</h3>
+  </div>
   <input id="reports-search" class="form-control report-search" type="text" placeholder="Filter by title or status">
   {% if user.role == "CITIZEN" %}
     <a class="btn btn-success" href="{% url 'reports:create_report' %}">New Report</a>
   {% endif %}
 </div>
 <div class="card">
-  <div class="card-body">
+  <div class="card-body p-4">
     <div class="table-responsive">
-    <table class="table table-striped report-table">
+    <table class="table table-striped report-table align-middle">
       <thead><tr><th>ID</th><th>Title</th><th>Category</th><th>Status</th><th>Location</th><th>Created</th><th>Actions</th></tr></thead>
       <tbody>
       {% for report in reports %}

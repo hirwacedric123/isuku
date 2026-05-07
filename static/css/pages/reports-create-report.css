@@ -1,12 +1,12 @@
 form p label {
   font-weight: 600;
+  color: var(--color-primary);
 }
 
 form p input,
 form p textarea,
 form p select {
-  border-radius: 10px;
-  border: 1px solid rgba(42, 36, 32, 0.2);
+  border: 1px solid var(--color-border-strong);
 }
 
 form p textarea {

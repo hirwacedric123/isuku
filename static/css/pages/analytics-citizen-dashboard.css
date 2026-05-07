@@ -1,5 +1,6 @@
 .dashboard-card {
-  border-left: 5px solid var(--color-forest);
+  border-left: 5px solid var(--color-primary);
+  background: linear-gradient(145deg, rgba(176, 206, 136, 0.15), #fff 45%);
 }
 
 .dashboard-card .btn {

@@ -1,0 +1,10 @@
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+
+from .models import NotificationLog
+
+
+@login_required
+def my_notifications(request):
+    notifications = NotificationLog.objects.filter(user=request.user)[:100]
+    return render(request, "notifications/my_notifications.html", {"notifications": notifications})

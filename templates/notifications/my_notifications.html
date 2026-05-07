@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/notifications-my-notifications.css' %}">{% endblock %}
+{% block content %}
+<h3 class="section-title mb-3">My Notifications</h3>
+<div class="card">
+  <div class="card-body">
+    <ul class="list-group notify-list">
+      {% for n in notifications %}
+        <li class="list-group-item d-flex justify-content-between">
+          <span>{{ n.message }}</span>
+          <small>{{ n.sent_at }}</small>
+        </li>
+      {% empty %}
+        <li class="list-group-item">No notifications yet.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

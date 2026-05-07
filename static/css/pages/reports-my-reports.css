@@ -1,0 +1,16 @@
+.report-search {
+  max-width: 320px;
+  border-radius: 10px;
+}
+
+.report-table thead th {
+  background-color: rgba(86, 114, 87, 0.12);
+}
+
+.report-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.report-table tbody tr:hover {
+  background-color: rgba(172, 171, 158, 0.18);
+}

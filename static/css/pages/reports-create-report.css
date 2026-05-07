@@ -1,0 +1,14 @@
+form p label {
+  font-weight: 600;
+}
+
+form p input,
+form p textarea,
+form p select {
+  border-radius: 10px;
+  border: 1px solid rgba(42, 36, 32, 0.2);
+}
+
+form p textarea {
+  min-height: 110px;
+}

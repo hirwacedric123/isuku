@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/analytics-contractor-redirect.css' %}">{% endblock %}
+{% block content %}
+<div class="card dashboard-card">
+  <div class="card-body">
+    <h3 class="section-title">Contractor Workspace</h3>
+    <p class="subtitle-muted">Use the contractor operations dashboard for route actions.</p>
+    <a class="btn btn-success" href="{% url 'routing:dashboard' %}">Open Contractor Dashboard</a>
+  </div>
+</div>
+{% endblock %}

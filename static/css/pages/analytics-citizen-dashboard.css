@@ -1,0 +1,7 @@
+.dashboard-card {
+  border-left: 5px solid var(--color-forest);
+}
+
+.dashboard-card .btn {
+  margin-top: 0.5rem;
+}

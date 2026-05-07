@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/analytics-citizen-dashboard.css' %}">{% endblock %}
+{% block content %}
+<div class="card dashboard-card">
+  <div class="card-body">
+    <h3 class="section-title">Citizen Dashboard</h3>
+    <p class="subtitle-muted">View schedules, submit reports, and track service updates.</p>
+    <a class="btn btn-success" href="{% url 'reports:create_report' %}">Report Waste Issue</a>
+  </div>
+</div>
+{% endblock %}

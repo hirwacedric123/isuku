@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/analytics-admin-dashboard.css' %}">{% endblock %}
+{% block extra_js %}<script src="{% static 'js/pages/analytics-admin-dashboard.js' %}"></script>{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+  <h3 class="section-title">Admin Dashboard</h3>
+  <a class="btn btn-outline-success" href="{% url 'analytics:export_reports_csv' %}">Export CSV</a>
+</div>
+<div class="row g-3">
+  <div class="col-md-4"><div class="card metric-card"><div class="card-body"><strong>Total Reports</strong><div class="metric-number" data-count="{{ total_reports }}">0</div></div></div></div>
+  <div class="col-md-4"><div class="card metric-card"><div class="card-body"><strong>Resolved Reports</strong><div class="metric-number" data-count="{{ resolved_reports }}">0</div></div></div></div>
+  <div class="col-md-4"><div class="card metric-card"><div class="card-body"><strong>Resolution Rate</strong><div class="metric-number" data-count="{{ resolution_rate }}">0</div>%</div></div></div>
+</div>
+<div class="card mt-3">
+  <div class="card-body">
+    <h5>Reports by Sector</h5>
+    <table class="table table-sm">
+      <thead><tr><th>Sector</th><th>Total</th></tr></thead>
+      <tbody>
+      {% for row in reports_by_sector %}
+        <tr><td>{{ row.sector__name }}</td><td>{{ row.total }}</td></tr>
+      {% empty %}
+        <tr><td colspan="2">No data yet.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

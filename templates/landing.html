@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/landing.css' %}">{% endblock %}
+{% block extra_js %}<script src="{% static 'js/pages/landing.js' %}"></script>{% endblock %}
+{% block content %}
+<section class="landing-hero card">
+  <div class="card-body p-4 p-md-5">
+    <p class="landing-badge mb-2">Kigali Smart Collection Platform</p>
+    <h1 class="section-title landing-title">Modern Monitoring for Cleaner Neighborhoods</h1>
+    <p class="subtitle-muted mb-4">
+      Track collection schedules, report overflowing bins, and improve contractor response with a clean digital workflow.
+    </p>
+    <div class="d-flex flex-wrap gap-2">
+      <a class="btn btn-success" href="{% url 'accounts:register' %}">Get Started</a>
+      <a class="btn btn-outline-dark" href="{% url 'accounts:login' %}">Sign In</a>
+    </div>
+  </div>
+</section>
+
+<section class="row g-3 mt-2">
+  <div class="col-md-4">
+    <article class="card feature-card h-100">
+      <div class="card-body">
+        <h5 class="section-title">Citizen Reporting</h5>
+        <p class="subtitle-muted mb-0">Submit geo-tagged waste reports and follow resolution status in real time.</p>
+      </div>
+    </article>
+  </div>
+  <div class="col-md-4">
+    <article class="card feature-card h-100">
+      <div class="card-body">
+        <h5 class="section-title">Contractor Routing</h5>
+        <p class="subtitle-muted mb-0">Generate practical route suggestions and close incidents faster.</p>
+      </div>
+    </article>
+  </div>
+  <div class="col-md-4">
+    <article class="card feature-card h-100">
+      <div class="card-body">
+        <h5 class="section-title">Admin Insights</h5>
+        <p class="subtitle-muted mb-0">Monitor response metrics and export reports for evidence-based decisions.</p>
+      </div>
+    </article>
+  </div>
+</section>
+{% endblock %}

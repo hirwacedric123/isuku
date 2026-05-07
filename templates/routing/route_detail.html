@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages/routing-route-detail.css' %}">{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+  <h3 class="section-title">Route #{{ route.id }}</h3>
+  {% if route.status != "COMPLETED" %}
+    <a class="btn btn-success" href="{% url 'routing:complete_route' route.id %}">Complete Route</a>
+  {% endif %}
+</div>
+<div class="card">
+  <div class="card-body">
+    <p><strong>Status:</strong> {{ route.get_status_display }}</p>
+    <div class="table-responsive">
+    <table class="table table-sm route-table">
+      <thead><tr><th>Seq</th><th>Report</th><th>Coordinates</th><th>Status</th></tr></thead>
+      <tbody>
+      {% for stop in route.stops.all %}
+        <tr>
+          <td>{{ stop.sequence }}</td>
+          <td>{{ stop.report.title }}</td>
+          <td>{{ stop.report.latitude }}, {{ stop.report.longitude }}</td>
+          <td>{{ stop.report.get_status_display }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
